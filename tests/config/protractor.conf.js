@@ -9,6 +9,7 @@ exports.config = {
   specs: [
     path.join(process.cwd(), 'tests/specs/*.js')
   ],
+  ignoreUncaughtExceptions: true,
   onPrepare: () => {
     // As we're using protractor it expects an Angular application.
     // This disables it to be able to use protractor with other kind of applications.
