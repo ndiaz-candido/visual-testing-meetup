@@ -1,0 +1,21 @@
+:global {
+  html {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+
+    & > #react-app {
+      height: 100%;
+    }
+
+    &.no-scroll {
+      overflow: hidden;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+:local {
+  .header {
+    background: black;
+    height: 100px;
+
+    .logo {
+      img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 100px;
+      }
+    }
+  }
+}
