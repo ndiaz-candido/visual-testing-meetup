@@ -1,5 +1,5 @@
 const path = require('path');
-const PixDiff = require('pix-diff');
+const Eyes = require("eyes.selenium").Eyes;
 
 exports.config = {
   framework: 'mocha',
@@ -29,12 +29,8 @@ exports.config = {
     // This disables it to be able to use protractor with other kind of applications.
     browser.waitForAngularEnabled(false);
 
-    // Sets the PixDiff object in the global 'browser' variable.
-    browser.pixDiff = new PixDiff({
-      basePath: 'tests/resources/baselines/',
-      diffPath: 'tests/resources/',
-      formatImageName: '{tag}-{name}-{width}x{height}',
-      baseline: true
-    });
+    // Sets the Applitools Eyes object in the global 'browser' variable.
+    browser.eyes = new Eyes();
+    browser.eyes.setApiKey(process.env.APPLITOOLS_KEY);
   }
 };
