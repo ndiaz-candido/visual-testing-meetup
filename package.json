@@ -6,7 +6,7 @@
   "scripts": {
     "test": "",
     "start:dev": "webpack-dev-server",
-    "build": "webpack"
+    "build": "webpack && cp -r ./public ./dist/public"
   },
   "author": "Néstor Diaz",
   "license": "ISC",
