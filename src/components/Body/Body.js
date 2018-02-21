@@ -18,7 +18,11 @@ export default class Body extends Component {
   }
 
   handleClickEvent() {
-    this.setState({ showDali: !this.state.showDali });
+    if (getSlowParam()) {
+      setTimeout(() => this.setState({ showDali: !this.state.showDali }), 2000);
+    } else {
+      this.setState({ showDali: !this.state.showDali })
+    }
   }
 
   renderRegularView() {
@@ -92,4 +96,8 @@ export default class Body extends Component {
 
 const getDiffParam = () => {
   return (window.location.search.substring(1) === 'diff');
+}
+
+const getSlowParam = () => {
+  return (window.location.search.substring(1) === 'slow');
 }
